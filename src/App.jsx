@@ -1,12 +1,13 @@
-import './App.css'
+import ImcCalc from "./components/ImcCalc";
+
+import "./App.css";
 
 function App() {
-  
   return (
-    <>
-      <h1>Calculadora de IMC</h1>
-    </>
-  )
+    <div className="container">
+      <ImcCalc />
+    </div>
+  );
 }
 
-export default App
+export default App;
