@@ -31,6 +31,14 @@ function App() {
     if (!info) return;
   };
 
+  const resetCalc = (e) => {
+    e.preventDefault();
+
+    setImc("");
+    setInfo("");
+    setInfoClass("");
+  };
+
   const [imc, setImc] = useState("");
   const [info, setInfo] = useState("");
   const [infoClass, setInfoClass] = useState("");
@@ -40,7 +48,13 @@ function App() {
       {!imc ? (
         <ImcCalc calcImc={calcImc} />
       ) : (
-        <ImcTable data={data} imc={imc} info={info} infoClass={infoClass} />
+        <ImcTable
+          data={data}
+          imc={imc}
+          info={info}
+          infoClass={infoClass}
+          resetCalc={resetCalc}
+        />
       )}
     </div>
   );
